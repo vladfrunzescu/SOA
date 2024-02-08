@@ -1,0 +1,42 @@
+<h2 class="brown-text">Add a grade to a student</h2>
+
+<form (ngSubmit)="submitForm()">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" [(ngModel)]="name" class="brown-input"><br>
+    <label for="grade">Grade:</label><br>
+    <input type="text" id="grade" name="grade" [(ngModel)]="grade" class="brown-input"><br><br>
+    <button type="submit" class="brown-button">Submit</button>
+</form>
+<div *ngIf="successfulText">
+    <pre>{{ successfulText }}</pre>
+</div>
+
+<h2 class="brown-text">Search student by name</h2>
+
+<form (ngSubmit)="search()" (ngCalculate)="calculate()">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" [(ngModel)]="searchName" class="brown-input"><br><br>
+    <button type="submit" class="brown-button">Search</button>
+    <button type="button" (click)="calculate()" class="brown-button">Calculate grade</button>
+</form>
+
+<div *ngIf="allGrades">
+    <table class="brown-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let grade of allGrades">
+                <td>{{ grade.name }}</td>
+                <td>{{ grade.grade }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="finalGrade">
+    <pre>Final grade: {{ finalGrade }}</pre>
+</div>

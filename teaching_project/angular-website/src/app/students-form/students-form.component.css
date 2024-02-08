@@ -1,0 +1,23 @@
+.brown-text {
+    color: brown;
+}
+
+.brown-input {
+    border: 1px solid brown;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.brown-button {
+    background-color: brown;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.brown-button:hover {
+    background-color: darkbrown; /* Change to a darker shade when hovered */
+}
